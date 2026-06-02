@@ -1,0 +1,153 @@
+/* Favorite Fruit Survey — shared styles */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #fdfdfd;
+    color: #333;
+}
+
+/* Centered content panel used by every page */
+.card {
+    max-width: 520px;
+    margin: 60px auto 0;
+    padding: 30px 40px;
+    text-align: center;
+    border: 1px solid #e2e2e2;
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+h1 {
+    font-size: 26px;
+    color: #222;
+}
+
+.prompt,
+.outcome-title {
+    color: #2b59c3;
+    font-weight: bold;
+}
+
+/* ---- Home page links ---- */
+.links {
+    margin-top: 28px;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+.link-btn {
+    font-size: 18px;
+    font-weight: bold;
+    color: #2b59c3;
+    text-decoration: none;
+}
+
+.link-btn:hover {
+    text-decoration: underline;
+}
+
+/* ---- Poll form ---- */
+.poll {
+    display: inline-block;
+    text-align: left;
+    margin-top: 16px;
+}
+
+.poll label {
+    display: block;
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+.vote-btn {
+    display: block;
+    margin: 22px auto 0;
+    padding: 6px 26px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+/* ---- Result chart ---- */
+.chart {
+    margin: 24px 0;
+    text-align: left;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    margin: 8px 0;
+}
+
+.label {
+    display: inline-block;
+    min-width: 110px;
+    padding: 3px 8px;
+    font-weight: bold;
+    color: #fff;
+    border-radius: 3px;
+}
+
+/* Per-fruit label colors (mirrors the assignment mockup) */
+.label-apple      { background: #f4c20d; color: #333; }
+.label-grape      { background: #f08a24; }
+.label-strawberry { background: #f08a24; }
+.label-melon      { background: #e23b3b; }
+
+.pct {
+    display: inline-block;
+    min-width: 48px;
+    font-weight: bold;
+    text-align: right;
+    margin-right: 10px;
+}
+
+/* Bar grows proportionally to the vote percentage */
+.bar-track {
+    flex: 1;
+    height: 16px;
+    background: #f0f0f0;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.bar {
+    display: block;
+    height: 100%;
+    background: #3b5bdb;
+}
+
+.chose {
+    margin-top: 22px;
+    color: #2b59c3;
+    font-weight: bold;
+}
+
+.chosen-name {
+    color: #e23b3b;
+}
+
+.count {
+    color: #e23b3b;
+    font-weight: bold;
+}
+
+.home a {
+    color: #2b59c3;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+/* Decorative ground line at the bottom of each page */
+.ground {
+    max-width: 520px;
+    margin: 20px auto;
+    border-top: 2px solid #cfe3c4;
+}

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JSP를 이용한 여론조사</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="card">
+        <h2 class="prompt">&#128071; Select your favorite fruit.</h2>
+
+        <form class="poll" action="vote" method="post">
+            <label><input type="radio" name="fruit" value="Apple" checked> Apple</label>
+            <label><input type="radio" name="fruit" value="Grape"> Grape</label>
+            <label><input type="radio" name="fruit" value="Strawberry"> Strawberry</label>
+            <label><input type="radio" name="fruit" value="Melon"> Melon</label>
+
+            <button type="submit" class="vote-btn">VOTE</button>
+        </form>
+    </div>
+
+    <div class="ground"></div>
+</body>
+</html>
