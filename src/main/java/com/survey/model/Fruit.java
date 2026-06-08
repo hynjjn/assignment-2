@@ -1,17 +1,27 @@
+// Fruit.java: DTO object (JavaBean)
+
 package com.survey.model;
+
+import java.io.Serializable;
 
 /**
  * DTO representing one fruit option in the survey.
  * {@code percentage} is not stored in the DB; it is computed per request
  * (votes / total) by the controller before the view renders it.
  */
-public class Fruit {
 
+// 3. Serializable
+public class Fruit implements Serializable {
+
+    private static final long serialVersionUID = 1L;
+
+    // private fields, exposed with getters and setters
     private int id;
     private String name;
     private int votes;
     private int percentage;
 
+    // 1. no-arg constructor
     public Fruit() {
     }
 
@@ -21,6 +31,7 @@ public class Fruit {
         this.votes = votes;
     }
 
+    // 2. getters and setters -> naming conventions
     public int getId() {
         return id;
     }

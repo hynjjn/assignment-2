@@ -14,6 +14,7 @@ View        src/main/webapp/opinion.html        Home page (VOTE / OUTCOME links)
 Controller  com.survey.controller.SurveyServlet  Shared: load + rank results, forward to view
             com.survey.controller.VoteServlet     POST /vote    → record vote, show result
             com.survey.controller.OutcomeServlet  GET  /outcome → show result only
+            com.survey.controller.ResetServlet    GET  /reset   → re-run schema.sql, show result
 
 Model       com.survey.model.Fruit               DTO
             com.survey.model.FruitDAO             All JDBC SQL for the fruit table
@@ -21,6 +22,10 @@ Model       com.survey.model.Fruit               DTO
 ```
 
 Requirements covered:
+- **Reset** — the home page **RESET** link re-runs `sql/schema.sql` (bundled into
+  the WAR on the classpath). It executes the *same* script as the manual
+  `mysql < sql/schema.sql` setup, so the initial state has a single source of
+  truth: no seed values are duplicated in Java.
 - **Repeated voting** — `addVote` just increments the counter every call.
 - **Sorted results** — `findAllOrderByVotesDesc` orders by votes DESC.
 - **25% start** — each of the 4 fruits seeded with 1 vote (`sql/schema.sql`).

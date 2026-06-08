@@ -53,6 +53,21 @@
     <build>
         <!-- Produces opinion-poll.war -->
         <finalName>opinion-poll</finalName>
+
+        <!-- Bundle sql/schema.sql into WEB-INF/classes so the RESET feature can
+             re-run the same seed script at runtime (single source of truth). -->
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+            </resource>
+            <resource>
+                <directory>sql</directory>
+                <includes>
+                    <include>schema.sql</include>
+                </includes>
+            </resource>
+        </resources>
+
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

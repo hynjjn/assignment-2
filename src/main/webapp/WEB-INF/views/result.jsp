@@ -1,3 +1,5 @@
+<!-- result (outcome) -->
+ <!-- why this is jsp -> because it is the only code where uses the DB -->
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
@@ -12,6 +14,7 @@
     <div class="card">
         <h2 class="outcome-title">Survey Outcome</h2>
 
+        <!-- fruit의 개수에 따라 loop -->
         <div class="chart">
             <c:forEach var="fruit" items="${fruits}">
                 <div class="row">
@@ -19,13 +22,15 @@
                         ${fruit.name}:
                     </span>
                     <span class="pct">${fruit.percentage}%</span>
+                    <!-- <span class="pct">${fruit.votes}</span> change to vote-->
                     <span class="bar-track">
-                        <span class="bar" style="width: ${fruit.percentage}%;"></span>
+                        <span class="bar" style="--pct: ${fruit.percentage}%;"></span>
                     </span>
                 </div>
             </c:forEach>
         </div>
 
+        <!-- only shows when the vote is submitted -->
         <c:if test="${not empty chosen}">
             <p class="chose">You chose <span class="chosen-name">${chosen}</span>.</p>
         </c:if>
@@ -33,7 +38,5 @@
 
         <p class="home"><a href="opinion.html">Home</a></p>
     </div>
-
-    <div class="ground"></div>
 </body>
 </html>

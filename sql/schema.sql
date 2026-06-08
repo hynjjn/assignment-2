@@ -24,3 +24,5 @@ INSERT INTO fruit (name, votes) VALUES
     ('Grape',      1),
     ('Strawberry', 1),
     ('Melon',      1);
+
+    -- ('Mango',      1);

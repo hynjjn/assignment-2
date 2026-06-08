@@ -20,7 +20,7 @@ body {
     border: 1px solid #e2e2e2;
     border-radius: 8px;
     background: #fff;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 h1 {
@@ -50,6 +50,24 @@ h1 {
 }
 
 .link-btn:hover {
+    text-decoration: underline;
+}
+
+/* ---- Reset link (bottom-right, re-seeds the poll to 25% each) ---- */
+.reset-row {
+    max-width: 520px;
+    margin: 12px auto 0;
+    text-align: right;
+}
+
+.reset-btn {
+    font-size: 16px;
+    font-weight: bold;
+    color: #2b59c3;
+    text-decoration: none;
+}
+
+.reset-btn:hover {
     text-decoration: underline;
 }
 
@@ -120,6 +138,7 @@ h1 {
 
 .bar {
     display: block;
+    width: var(--pct, 0);
     height: 100%;
     background: #3b5bdb;
 }
@@ -143,11 +162,4 @@ h1 {
     color: #2b59c3;
     font-weight: bold;
     text-decoration: underline;
-}
-
-/* Decorative ground line at the bottom of each page */
-.ground {
-    max-width: 520px;
-    margin: 20px auto;
-    border-top: 2px solid #cfe3c4;
 }
