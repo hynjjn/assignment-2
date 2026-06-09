@@ -39,8 +39,15 @@ public abstract class SurveyServlet extends HttpServlet {
                 total += f.getVotes();
             }
             for (Fruit f : fruits) {
+                // (total == 0)일 때 0을 주는 이유: 0으로 나누기(ArithmeticException) 방지
                 int pct = (total == 0) ? 0 : Math.round(f.getVotes() * 100f / total);
                 f.setPercentage(pct);
+
+                // [4] 소수점 한 자리까지 표시하려면:
+                //     - Fruit.java의 percentage 타입을 int -> double 로 바꾸고
+                //     - 아래 두 줄로 교체 (위 두 줄은 주석 처리)
+                // double pct = (total == 0) ? 0 : Math.round(f.getVotes() * 1000f / total) / 10.0;
+                // f.setPercentage(pct);
             }
 
             request.setAttribute("fruits", fruits);

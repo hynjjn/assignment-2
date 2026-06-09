@@ -20,6 +20,8 @@ public class Fruit implements Serializable {
     private String name;
     private int votes;
     private int percentage;
+    // [4] 소수점 표시 시: 위 percentage(int)를 주석 처리하고 아래로 교체 + getter/setter 타입도 double 로
+    // private double percentage;
 
     // 1. no-arg constructor
     public Fruit() {
@@ -63,4 +65,13 @@ public class Fruit implements Serializable {
     public void setPercentage(int percentage) {
         this.percentage = percentage;
     }
+
+    // [4] 소수점 버전 getter/setter (위 int 버전 대신 사용)
+    // public double getPercentage() {
+    //     return percentage;
+    // }
+    //
+    // public void setPercentage(double percentage) {
+    //     this.percentage = percentage;
+    // }
 }
